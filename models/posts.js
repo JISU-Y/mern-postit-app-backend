@@ -20,6 +20,7 @@ export default Post;
 
 // post
 // id
+// position {left:'',top:''} ====> 추가 필요
 // tag - 중요 / 오늘 할 일 / 살 것 / 등등
 // todos - todo 배열 (할일들)
 // timeStamp
