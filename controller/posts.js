@@ -36,5 +36,32 @@ export const updatePost = async (req, res) => {
   res.json(post);
 };
 
+// updating todos in Postit
+// export const updateTodosInPost = async (req, res) => {
+//   const { id } = req.params;
+//   const { todoText, todoDone } = req.body.todos;
+
+//   // id 유효성 확인
+//   if (!mongoose.Types.ObjectId.isValid(id)) {
+//     return res.status(404).send(`The id ${id} is not valid`);
+//   }
+//   const post = { tag, todos, _idL: id };
+//   await Post.findByIdAndUpdate(id, post, { new: true });
+//   res.json(post);
+// };
+
+// deleting Postit
+export const deletePost = async (req, res) => {
+  const { id } = req.params;
+
+  // id 유효성 확인
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).send(`The id ${id} is not valid`);
+  }
+
+  await Post.findByIdAndRemove(id);
+  res.json({ message: "Postit deleted successfully" });
+};
+
 // 3. DB에서 가져오거나 주는 담당?
 // req, res로 받거나 준다?
