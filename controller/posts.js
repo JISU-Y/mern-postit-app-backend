@@ -25,13 +25,13 @@ export const createPost = async (req, res) => {
 // updating Postit
 export const updatePost = async (req, res) => {
   const { id } = req.params;
-  const { tag, todos } = req.body;
+  const { tag, todos, position } = req.body;
 
   // id 유효성 확인
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).send(`The id ${id} is not valid`);
   }
-  const post = { tag, todos, _idL: id };
+  const post = { tag, todos, position, _idL: id };
   await Post.findByIdAndUpdate(id, post, { new: true });
   res.json(post);
 };

@@ -10,6 +10,10 @@ const postSchema = new Schema(
         todoDone: Boolean,
       },
     ],
+    position: {
+      x: String,
+      y: String,
+    },
   },
   { timestamps: true }
 );
