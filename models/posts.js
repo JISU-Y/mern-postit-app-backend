@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
-    tag: { type: String, required: true },
+    tag: [{ type: String }],
     todos: [
       {
         todoText: String,
@@ -24,9 +24,10 @@ export default Post;
 
 // post
 // id
-// position {left:'',top:''} ====> 추가 필요
 // tag - 중요 / 오늘 할 일 / 살 것 / 등등
 // todos - todo 배열 (할일들)
+// position {left:'',top:''}
+// color - ====> 추가 필요
 // timeStamp
 
 // todos

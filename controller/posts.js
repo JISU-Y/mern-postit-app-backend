@@ -45,9 +45,9 @@ export const updatePost = async (req, res) => {
 //   if (!mongoose.Types.ObjectId.isValid(id)) {
 //     return res.status(404).send(`The id ${id} is not valid`);
 //   }
-//   const post = { tag, todos, _idL: id };
-//   await Post.findByIdAndUpdate(id, post, { new: true });
-//   res.json(post);
+//   const todos = { todoText, todoDone, _idL: id };
+//   await Post.findByIdAndUpdate(id, todos, { new: true });
+//   res.json(todos);
 // };
 
 // deleting Postit
