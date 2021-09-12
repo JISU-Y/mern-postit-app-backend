@@ -15,16 +15,17 @@ app.use(cors());
 // schema 확인 위해서 POSTMAN으로 확인 (localhost:5000 주소 들어가서 send 해봄)
 app.use("/posts", postsRoutes);
 
-const mongodb =
-  "mongodb+srv://jisuyoo:wltn2753@cluster0.2jjvd.mongodb.net/postit-database?retryWrites=true&w=majority";
+// const mongodb =
+//   "mongodb+srv://jisuyoo:wltn2753@cluster0.2jjvd.mongodb.net/postit-database?retryWrites=true&w=majority";
 
 app.get("/", (req, res) => {
   res.send("Welcome to server, here is for a postit app");
 });
 
 const PORT = process.env.PORT || 5000;
+
 mongoose
-  .connect(mongodb, {
+  .connect(process.env.mongodb, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
