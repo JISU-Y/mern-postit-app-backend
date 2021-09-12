@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import postsRoutes from "./routes/posts.js";
+import userRoutes from "./routes/user.js";
 
 const app = express();
 dotenv.config();
@@ -11,9 +12,11 @@ dotenv.config();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
 //posts(end point) routes 추가
 // schema 확인 위해서 POSTMAN으로 확인 (localhost:5000 주소 들어가서 send 해봄)
 app.use("/posts", postsRoutes);
+app.use("/user", userRoutes);
 
 // const mongodb =
 //   "mongodb+srv://jisuyoo:wltn2753@cluster0.2jjvd.mongodb.net/postit-database?retryWrites=true&w=majority";
