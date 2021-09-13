@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema(
   {
+    name: String,
+    creator: String,
     tag: [{ type: String }],
     todos: [
       {
@@ -24,6 +26,7 @@ export default Post;
 
 // post
 // id
+// creator 게시자
 // tag - 중요 / 오늘 할 일 / 살 것 / 등등
 // todos - todo 배열 (할일들)
 // position {left:'',top:''}

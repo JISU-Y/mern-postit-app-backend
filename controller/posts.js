@@ -13,10 +13,12 @@ export const readPosts = async (req, res) => {
 
 // creating postits / postit 생성하기
 export const createPost = async (req, res) => {
-  const post = new Post(req.body);
+  const post = req.body;
+  const newPost = new Post({ ...post, creator: req.userId });
+
   try {
-    await post.save();
-    res.status(201).json(post);
+    await newPost.save();
+    res.status(201).json(newPost);
   } catch (error) {
     res.status(409).json({ error: error.message });
   }
