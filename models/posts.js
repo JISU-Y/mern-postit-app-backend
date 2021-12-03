@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
-const Schema = mongoose.Schema;
+import mongoose from "mongoose"
+const Schema = mongoose.Schema
 
 const postSchema = new Schema(
   {
     name: String,
     creator: String,
-    tag: [{ type: String }],
+    tag: [{ tagName: String }],
     todos: [
       {
         todoText: String,
@@ -18,11 +18,11 @@ const postSchema = new Schema(
     },
   },
   { timestamps: true }
-);
+)
 
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema)
 
-export default Post;
+export default Post
 
 // post
 // id
